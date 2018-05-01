@@ -44,9 +44,9 @@ Each crystal should have a random hidden value between 1 - 12.
 
 # Link
 
-You can access the game without downloading any file by clicking [https://gustavogibo.github.io/unit-4-game/](here).
+You can access the game without downloading any file by clicking [here](https://gustavogibo.github.io/unit-4-game/).
 
-#File Structure
+# File Structure
 
 - __unit-4-game__
   - [LICENSE](unit-4-game/LICENSE)
