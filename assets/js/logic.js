@@ -60,20 +60,23 @@ $(document).ready(function() {
         creaturesValues: [0,0,0,0],
         resetGame: function() {
             
-            // this.wins = 0;
-            // this.losses = 0;
             this.randomNumber = getRandomInt(19,120);
+            this.randomNumber = parseInt(this.randomNumber);
             $("#number-board").html(this.randomNumber);
+
+            this.numberSoFar = 0;
+            $("#number-user").html(this.numberSoFar);
 
             this.generateNewValues();
         },
         compareGoal: function() {
 
-            if(this.numberSoFar == randomNumber) {
+
+            if(this.numberSoFar == this.randomNumber) {
 
                 return 1;
 
-            } else if(this.numberSoFar < randomNumber){
+            } else if(this.numberSoFar < this.randomNumber){
 
                 return 2;
 
@@ -86,13 +89,17 @@ $(document).ready(function() {
         },
         generateNewValues: function() {
 
-            var values = [1,2,3,4];
-
             $(".img-score").each(function(i, obj) {
 
                 $(this).attr("value", getRandomInt(1, 12));
                 
             });
+
+            var valueOne = "#img-"+getRandomInt(0,3);
+
+            console.log(valueOne);
+
+            $(valueOne).attr("value", 1);
 
 
 
@@ -107,14 +114,53 @@ $(document).ready(function() {
 
         var value = $(this).attr("value");
 
-        game.numberSoFar += value;
-        $("#number-user").html(value);
+        value = parseInt(value);
+
+        game.numberSoFar = parseInt(game.numberSoFar);
+
+        game.numberSoFar = game.numberSoFar + value;
+        $("#number-user").empty().append(value);
 
         if(game.compareGoal() == 1) {
 
+            game.wins++;
+            $("#wins").html(game.wins);
 
+            var newGame = confirm("Good Job! Do you want to start a new game?");
 
+            if(newGame == true) {
 
+                game.resetGame();
+
+            } else {
+
+                alert("Alright! See you later!");
+                location.reload();
+
+            }
+
+        }else if(game.compareGoal() == 2) {
+
+            $("#number-user").empty().append(game.numberSoFar);
+            $(".number-user-box").addClass("bg-primary").addClass("text-white");
+
+        } else {
+
+            game.losses++;
+            $("#losses").html(game.losses);
+
+            var newGame = confirm("You lost! Do you want to start a new game?");
+
+            if(newGame == true) {
+
+                game.resetGame();
+
+            } else {
+
+                alert("Alright! See you later!");
+                location.reload();
+
+            }
 
         }
 
