@@ -3,6 +3,13 @@ body {
     /* color: #fff; */
 }
 
-#item-1 {
-    
+.container-images img {
+    cursor: pointer;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.container-images img:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
 }
