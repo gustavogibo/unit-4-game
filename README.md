@@ -1,4 +1,4 @@
-# unit-4-game
+# Unit-4-game
 
 # Installing
 
@@ -15,7 +15,7 @@ Here's how the app works:
 There will be four Kirby Characters displayed as buttons on the page.
 The player will be shown a random number at the start of the game.
 
-When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+When the player clicks on a character, it will add a specific amount of points to the player's total score. 
 
 Your game will hide this amount until the player clicks a crystal.
 When they do click one, update the player's score counter.
@@ -29,9 +29,10 @@ When the game begins again, the player should see a new random number. Also, all
 
 The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
 
-# Option 1 Game design notes
+# Additional notes
 
 The random number shown at the start of the game should be between 19 - 120.
+
 Each crystal should have a random hidden value between 1 - 12.
 
 # Technologies
