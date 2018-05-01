@@ -14,34 +14,8 @@ function toggleDiv(statement, divName) {
     
 }
 
-function changeDivContent(divName, content) {
-
-    var element = document.getElementById(divName);
-
-    element.textContent = content;
-
-}
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomNumber(target, max) {
-
-    var result = 0;
-
-    if(target == 1) {
-
-        return Math.floor(Math.random() * Math.floor(19)) + Math.floor(Math.random() * Math.floor(19));
-
-    } else {
-
-        return Math.floor(Math.random() * Math.floor(max));
-
-    }
-
-    return result;
-
 }
 
 function removeIndex(array, element) {
