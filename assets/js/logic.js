@@ -44,8 +44,9 @@ function randomNumber(target, max) {
 
 }
 
-function remove(array, element) {
+function removeIndex(array, element) {
     const index = array.indexOf(element);
+    // console.log(index);
     array.splice(index, 1);
 }
 
@@ -56,8 +57,6 @@ $(document).ready(function() {
         losses: 0,
         randomNumber: 0,
         numberSoFar: 0,
-        imagesSrc: ["assets/img/badana-dee.png", "assets/img/kind-dedede.png", "assets/img/kirby.png", "assets/img/meta-knight.png"],
-        creaturesValues: [0,0,0,0],
         resetGame: function() {
             
             this.randomNumber = getRandomInt(19,120);
@@ -89,18 +88,33 @@ $(document).ready(function() {
         },
         generateNewValues: function() {
 
+            var arrImages = ["assets/img/bandana-dee.png", "assets/img/kind-dedede.png", "assets/img/kirby.png", "assets/img/meta-knight.png"];
+            var iterator = 3;
+
+            for (let count = 3; count >= 0; count--) {
+                var r = getRandomInt(0,iterator);
+                var valueOne = "#img-"+count;
+                $(valueOne).attr("src", arrImages[r]);
+                // console.log(arrImages);
+                removeIndex(arrImages, arrImages[r]);
+                iterator--;
+                
+            }
+
             $(".img-score").each(function(i, obj) {
 
                 $(this).attr("value", getRandomInt(1, 12));
+
+                
                 
             });
 
             var valueOne = "#img-"+getRandomInt(0,3);
 
-            console.log(valueOne);
-
             $(valueOne).attr("value", 1);
 
+            //generating random srcs to the img tags
+            
 
 
         }
