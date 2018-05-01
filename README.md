@@ -1,6 +1,13 @@
 # unit-4-game
 
-# Intructions
+# Installing
+
+* Download the ZIP file
+* Extract all the files
+* Open index.html
+* Follow the rules and good luck!
+
+# Rules
 
 The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters. 
 Here's how the app works:
@@ -60,3 +67,5 @@ You can access the game without downloading any file by clicking [https://gustav
     - __js__
       - [logic.js](unit-4-game/assets/js/logic.js)
   - [index.html](unit-4-game/index.html)
+
+#
