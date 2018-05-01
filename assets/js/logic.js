@@ -60,23 +60,27 @@ $(document).ready(function() {
         creaturesValues: [0,0,0,0],
         resetGame: function() {
             
-            this.wins = 0;
-            this.losses = 0;
+            // this.wins = 0;
+            // this.losses = 0;
             this.randomNumber = getRandomInt(19,120);
+            $("#number-board").html(this.randomNumber);
 
-            for (let i = 0; i < this.creatureValues.length; i++) {
-                this.creaturesValues[i] = getRandomInt(1,12);
-            }
+            this.generateNewValues();
         },
         compareGoal: function() {
 
-            if(this.numberSoFar > randomNumber) {
+            if(this.numberSoFar == randomNumber) {
 
                 return 1;
 
+            } else if(this.numberSoFar < randomNumber){
+
+                return 2;
+
             } else {
 
-                return 0;
+                return 3;
+
             }
             
         },
@@ -90,16 +94,31 @@ $(document).ready(function() {
                 
             });
 
+
+
         }
 
 
     }
 
-    game.generateNewValues();
+    game.resetGame();
 
     $(".img-score").on("click", function() {
 
-        var value = $(this).val();
+        var value = $(this).attr("value");
+
+        game.numberSoFar += value;
+        $("#number-user").html(value);
+
+        if(game.compareGoal() == 1) {
+
+
+
+
+
+        }
+
+
 
 
 

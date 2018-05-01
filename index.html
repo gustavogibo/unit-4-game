@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col text-center">
                     <h1>UNIT-4 GAME - KIRBY VERSION</h1>
@@ -22,9 +22,9 @@
         </div>
     </header>
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-10">
+                <div class="col-12">
                     <div class="game-instructions card">
                         <div class="card-body">
                             <h3 class="card-title">Instructions</h3>
@@ -41,9 +41,9 @@
             </div>
         </div>
         <br>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-5">
+                <div class="col-3">
                     <div class="card number-board text-center">
                         <div class="card-body text-center">
                             <strong class="card-title">Number</strong>
@@ -51,11 +51,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-3">
                     <div class="card number-board text-center">
                         <div class="card-body text-center">
                             <strong class="card-title">Your number</strong>
                             <p id="number-user" class="card-text">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card bg-success text-white number-board text-center">
+                        <div class="card-body text-center">
+                            <strong class="card-title">Wins</strong>
+                            <p id="wins" class="card-text">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card bg-danger text-white number-board text-center">
+                        <div class="card-body text-center">
+                            <strong class="card-title">Losses</strong>
+                            <p id="losses" class="card-text">0</p>
                         </div>
                     </div>
                 </div>
